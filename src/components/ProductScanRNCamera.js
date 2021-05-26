@@ -29,6 +29,7 @@ class ProductScanRNCamera extends Component {
   }
 
   async takePicture() {
+    console.log(this.camera);
     if (this.camera) {
       const options = {quality: 0.5, base64: true};
       const data = await this.camera.takePictureAsync(options);
@@ -63,10 +64,12 @@ class ProductScanRNCamera extends Component {
           onBarCodeRead={this.onBarCodeRead.bind(this)}
           onFocusChanged={() => {}}
           onZoomChanged={() => {}}
-          permissionDialogTitle={'Permission to use camera'}
-          permissionDialogMessage={
-            'We need your permission to use your camera phone'
-          }
+          androidCameraPermissionOptions={{
+            title: 'Permission to use camera',
+            message: 'We need your permission to use your camera',
+            buttonPositive: 'Ok',
+            buttonNegative: 'Cancel',
+          }}
           style={styles.preview}
           type={this.state.camera.type}
         />

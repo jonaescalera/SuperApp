@@ -12,14 +12,22 @@ class MainScreen extends React.Component {
     this.props.navigation.navigate('VideoScreen');
   };
 
+  handlePressScanCode = () => {
+    console.log('Go to scan code ');
+    this.props.navigation.navigate('ProductScanRNCamera');
+  };
+
   render() {
     return (
       <View style={styles.mainMenu}>
         <Pressable onPress={this.handlePressPicture} style={styles.btn}>
-          <Text style={styles.txt}>Foto</Text>
+          <Text style={styles.txt}>Fotografia</Text>
         </Pressable>
         <Pressable onPress={this.handlePressVideo} style={styles.btn}>
           <Text style={styles.txt}>Video</Text>
+        </Pressable>
+        <Pressable onPress={this.handlePressScanCode} style={styles.btn}>
+          <Text style={styles.txt}>ScanCode</Text>
         </Pressable>
       </View>
     );

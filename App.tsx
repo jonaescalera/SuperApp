@@ -8,16 +8,17 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import CameraStack from './src/components/CameraStack'
+import CameraStack from './src/components/CameraStack';
+import Login from './src/components/login/Login.tsx';
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <Login />
+    // <NavigationContainer>
 
-      <CameraStack></CameraStack>
+    //   <CameraStack></CameraStack>
 
-    </NavigationContainer>
-
+    // </NavigationContainer>
   );
 };
 
